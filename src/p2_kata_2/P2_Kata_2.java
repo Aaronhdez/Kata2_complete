@@ -15,7 +15,7 @@ import java.util.Map;
 public class P2_Kata_2 {
 
     public static void main(String[] args) {
-        int[] data = {3,2,3,4,5,3,1,4,5,2,2,1,4,5,3};
+        Integer[] data = {3,2,3,4,5,3,1,4,5,2,2,1,4,5,3};
         p2_kata2_v3.Histogram histogram = new p2_kata2_v3.Histogram(data);
         Iterator <Map.Entry<Integer,Integer>> entries = histogram.getHistogram().entrySet().iterator();
         while (entries.hasNext()) {
