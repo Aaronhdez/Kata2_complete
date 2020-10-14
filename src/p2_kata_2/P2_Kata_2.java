@@ -5,7 +5,7 @@
  */
 package p2_kata_2;
 
-import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 
 /**
@@ -14,18 +14,14 @@ import java.util.Map;
  */
 public class P2_Kata_2 {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
         int[] data = {3,2,3,4,5,3,1,4,5,2,2,1,4,5,3};
-        Map<Integer,Integer> histogram = new HashMap<>();
-        for (int i = 0; i < data.length; i++) {
-            histogram.put(data[i], histogram.containsKey((Integer)data[i])? histogram.get(data[i]) + 1 : 1);
-        }
-        for (Integer key : histogram.keySet()) {
-            System.out.println("Key: " + key + ", Value: " + histogram.get(key));
-        }
+        p2_kata2_v3.Histogram histogram = new p2_kata2_v3.Histogram(data);
+        Iterator <Map.Entry<Integer,Integer>> entries = histogram.getHistogram().entrySet().iterator();
+        while (entries.hasNext()) {
+            Map.Entry<Integer,Integer> entry = entries.next();
+            System.out.println("Key: " + entry.getKey() + ", value: " + entry.getValue());
+        }   
     }
     
 }
