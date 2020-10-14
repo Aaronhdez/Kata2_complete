@@ -21,11 +21,7 @@ public class P2_Kata_2 {
         int[] data = {3,2,3,4,5,3,1,4,5,2,2,1,4,5,3};
         Map<Integer,Integer> histogram = new HashMap<>();
         for (int i = 0; i < data.length; i++) {
-            if(histogram.containsKey((Integer)data[i])){
-                histogram.put(data[i], histogram.get(data[i]) + 1);
-            } else {
-                histogram.put(data[i], 1);
-            }
+            histogram.put(data[i], histogram.containsKey((Integer)data[i])? histogram.get(data[i]) + 1 : 1);
         }
         for (Integer key : histogram.keySet()) {
             System.out.println("Key: " + key + ", Value: " + histogram.get(key));
